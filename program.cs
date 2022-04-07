@@ -1,10 +1,6 @@
  public class Program {
         public static void Main(string[] args) {
-            try {
-                CreateHostBuilder(args).Build().Run();
-            } catch (Exception ex) {
-                writeerrorOnStartup(ex.ToString());
-            }
+               CreateHostBuilder(args).Build().Run();
         }
         /// <summary>
         /// Start Method
@@ -22,7 +18,4 @@
                     opts.UseSqlServer(config.GetConnectionString("YourConnectionString")));
                 configBuilder.Add(configSource);
             });
-        private static void writeerrorOnStartup(string error) {
-            File.WriteAllText(@"D:\www\ServerDemo\Services\KironVirtualDemo\Logs\error.log", error);
-        }
     }
